@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://uu14.github.io</id>
+    <title>班长博客</title>
+    <updated>2022-05-22T13:01:18.593Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://uu14.github.io"/>
+    <link rel="self" href="https://uu14.github.io/atom.xml"/>
+    <subtitle>记录点滴-温故而知新</subtitle>
+    <logo>https://uu14.github.io/images/avatar.png</logo>
+    <icon>https://uu14.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, 班长博客</rights>
+    <entry>
+        <title type="html"><![CDATA[0.93版测试]]></title>
+        <id>https://uu14.github.io/post/093-ban-ce-shi/</id>
+        <link href="https://uu14.github.io/post/093-ban-ce-shi/">
+        </link>
+        <updated>2022-05-22T13:00:50.000Z</updated>
+        <content type="html"><![CDATA[<p>的十公分的时光v梵蒂冈v梵蒂冈</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[手机frps配置]]></title>
+        <id>https://uu14.github.io/post/shou-ji-frps-pei-zhi/</id>
+        <link href="https://uu14.github.io/post/shou-ji-frps-pei-zhi/">
+        </link>
+        <updated>2022-05-22T11:15:27.000Z</updated>
+        <content type="html"><![CDATA[<p>下载地址https://github.com/HaidyCao/frp/releases<br>
+https://m.apkpure.com/cn/frp/com.tools.frp/versions<br>
+教程https://github.com/HaidyCao/frp</p>
+<p>frps.ini在服务器 A 上修改并设置bind_port要连接到 frp 客户端：</p>
+<h1 id="frpsini">frps.ini</h1>
+<p>[common]<br>
+bind_port = 7000<br>
+frps在服务器 A 上启动：<br>
+./frps -c ./frps.ini</p>
+<p>在服务器 B 上，修改frpc.ini以将您的frps服务器公共 IP 作为server_addr字段：</p>
+<h1 id="frpcini">frpc.ini</h1>
+<p>[common]<br>
+server_addr = x.x.x.x<br>
+server_port = 7000</p>
+<p>[ssh]<br>
+type = tcp<br>
+local_ip = 127.0.0.1<br>
+local_port = 22<br>
+remote_port = 6000<br>
+请注意，local_port（在客户端侦听）和remote_port（在服务器上公开）用于进出 frp 系统的流量，而server_port在 frp 之间使用。</p>
+<p>frpc在服务器 B 上启动：<br>
+./frpc -c ./frpc.ini</p>
+<p>从另一台机器，像这样通过 SSH 连接到服务器 B（假设用户名是test）：</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[吉比特H2-3e光猫获取超级管理密码]]></title>
+        <id>https://uu14.github.io/post/ji-bi-te-h2-3e-guang-mao-huo-qu-chao-ji-guan-li-mi-ma/</id>
+        <link href="https://uu14.github.io/post/ji-bi-te-h2-3e-guang-mao-huo-qu-chao-ji-guan-li-mi-ma/">
+        </link>
+        <updated>2022-05-13T12:03:50.000Z</updated>
+        <content type="html"><![CDATA[<p>运营商	中国移动<br>
+设备型号	H2-3e和H3-2S<br>
+设备标识号	CMDCE72071A9<br>
+硬件版本号	HWVer-E911<br>
+软件版本号	V2.30.01.01.02</p>
+<p>1.使用光猫背后的普通用户名登录进光猫，浏览器复制以下链接打开</p>
+<p>http://192.168.1.1/usr=CMCCAdmin&amp;psw=aDm8H%25MdA&amp;cmd=1&amp;telnet.gch 作者：无忌视觉 https://www.bilibili.com/read/cv15548233 出处：bilibili</p>
+<p>2.电脑启用 telnet 作者：无忌视觉 https://www.bilibili.com/read/cv15548233 出处：bilibili</p>
+<p>3.通过telnet进入光猫</p>
+<p>输入：</p>
+<p>telnet 192.168.1.1</p>
+<p>用户名、密码如下：<br>
+CMCCAdmin<br>
+aDm8H%MdA</p>
+<p>注意：密码默认不显示 不需要重复输入</p>
+<p>4.查看一下登陆信息,可以看到账号密码全部进行了加密<br>
+sidbg 1 DB p DevAuthInfo<br>
+4.修改CMCCAdmin的登陆密码</p>
+<p>sidbg 1 DB set DevAuthInfo 0 Pass aDm8H%MdA<br>
+5.保存<br>
+sidbg 1 DB save</p>
+<p>使用改好的密码登录光猫即可</p>
+<p>CMCCAdmin<br>
+aDm8H%MdA</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[监控]]></title>
+        <id>https://uu14.github.io/post/jian-kong/</id>
+        <link href="https://uu14.github.io/post/jian-kong/">
+        </link>
+        <updated>2022-05-06T10:41:05.000Z</updated>
+        <content type="html"><![CDATA[<p>监控串流<br>
+rtsp://admin:zxcv1234@192.168.1.8:554/onvif1<br>
+admin:zxcv1234@192.168.1.8:554/onvif1</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[电视盒子U盘启动命令]]></title>
+        <id>https://uu14.github.io/post/dian-shi-he-zi-u-pan-qi-dong-ming-ling/</id>
+        <link href="https://uu14.github.io/post/dian-shi-he-zi-u-pan-qi-dong-ming-ling/">
+        </link>
+        <updated>2022-05-06T10:37:09.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>电视盒子U盘启动命令<br>
+adb connect 192.168.8.175<br>
+adb shell reboot update<br>
+盒子U盘启动命令</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[自己编译全R3G说明]]></title>
+        <id>https://uu14.github.io/post/zi-ji-bian-yi-r3g-shuo-ming/</id>
+        <link href="https://uu14.github.io/post/zi-ji-bian-yi-r3g-shuo-ming/">
+        </link>
+        <updated>2022-04-14T06:12:31.000Z</updated>
+        <content type="html"><![CDATA[<p>https://downloads.immortalwrt.org/releases/21.02-SNAPSHOT/targets/ramips/mt7621/<br>
+在这里下载好immortalwrt-ramips-mt7621-xiaomi_mi-router-3g-initramfs-kernel文件刷入<br>
+在把自己编译的mi-router-3g-squashfs-sysupgrade.bin来升级</p>
+<p>此固件订阅需要重复添加一行一样的<br>
+frp 每次设置或更改后，需重启机子才生效</p>
+<p>项目地址<br>
+https://github.com/immortalwrt/immortalwrt</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ubuntu下用Lean源码编译openwrt]]></title>
+        <id>https://uu14.github.io/post/ubuntu-xia-yong-lean-yuan-ma-bian-yi-openwrt/</id>
+        <link href="https://uu14.github.io/post/ubuntu-xia-yong-lean-yuan-ma-bian-yi-openwrt/">
+        </link>
+        <updated>2022-04-10T07:52:38.000Z</updated>
+        <content type="html"><![CDATA[<p>源码地址：https://github.com/coolsnowwolf/lede  感谢Lean大神1：首先装好 Ubuntu 64bit，推荐 Ubuntu 20.04 LTS x642：命令行输入<br>
+sudo apt-get update<br>
+然后输入<br>
+sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync</p>
+<p>3： 使用git clone https://github.com/coolsnowwolf/lede 命令下载好源代码</p>
+<p>然后 cd lede</p>
+<p>进入目录<br>
+4：缝合一些其他插件原地址:https://github.com/kenzok8/openwrt-packages添加下面代码复制到 lede源码根目录 feeds.conf.default 文件<br>
+src-git kenzo https://github.com/kenzok8/openwrt-packages<br>
+src-git small https://github.com/kenzok8/small<br>
+5:<br>
+./scripts/feeds update -a<br>
+./scripts/feeds install -a<br>
+make menuconfig<br>
+6：<br>
+make -j8 download V=s 下载dl库（国内请尽量全局科学上网）<br>
+7：输入make -j1 V=s<br>
+（-j1 后面是线程数。第一次编译推荐用单线程）即可开始编译你要的固件了。</p>
+<p>再次编译 （适用于不更改配置功能和插件，仅升级）<br>
+cd lede<br>
+git pull<br>
+./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -a<br>
+make defconfig<br>
+make -j8 download<br>
+make -j<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mo>(</mo></mrow><annotation encoding="application/x-tex">((</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mopen">(</span></span></span></span>(nproc) + 1)) V=s</p>
+<p>更改配置编译</p>
+<p>cd lede<br>
+rm -rf ./tmp &amp;&amp; rm -rf .config<br>
+make menuconfig<br>
+make -j<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mo>(</mo></mrow><annotation encoding="application/x-tex">((</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mopen">(</span></span></span></span>(nproc) + 1)) V=s</p>
+<p>结束了<br>
+详情观看https://shimo.im/docs/gYjt9QVr8T9Vhv9X/read</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[openwrt二次编译基本常用命令]]></title>
+        <id>https://uu14.github.io/post/openwrt-er-ci-bian-yi-ji-ben-chang-yong-ming-ling/</id>
+        <link href="https://uu14.github.io/post/openwrt-er-ci-bian-yi-ji-ben-chang-yong-ming-ling/">
+        </link>
+        <updated>2022-04-08T13:58:16.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-javascript">Openwrt | 二次编译基本常用命令
+
+cd lede      进入LEDE目录
+git pull      同步更新源码
+./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -a    更新FEEDS
+rm -rf ./tmp &amp;&amp; rm -rf .config        清除编译配置和缓存
+make menuconfig                             进入编译配置菜单
+make -j$(($(nproc) + 1)) V=s           多线程编译
+
+
+
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[php显示文件夹下的图片代码]]></title>
+        <id>https://uu14.github.io/post/php-xian-shi-wen-jian-jia-xia-de-tu-pian-dai-ma/</id>
+        <link href="https://uu14.github.io/post/php-xian-shi-wen-jian-jia-xia-de-tu-pian-dai-ma/">
+        </link>
+        <updated>2022-03-13T13:35:12.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-javascript">&lt;?php  
+  
+echo &quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;动态图片&lt;/title&gt;&lt;/head&gt;&lt;body bgcolor=000000&gt;&lt;center&gt;&lt;font size=2 color=red&gt;&quot;;//输出html相关代码  
+  
+$page=$_GET['page'];//获取当前页数  
+  
+$max=50;//设置每页显示图片最大张数  
+  
+$path=&quot;images&quot;;//设置你的图片当前目录
+  
+$handle = opendir($path);
+  
+    while (false !== ($file = readdir($handle))) { //遍历该php文件所在目录  
+  
+      list($filesname,$kzm)=explode(&quot;.&quot;,$file);//获取扩展名  
+  
+        if($kzm==&quot;gif&quot; or $kzm==&quot;jpg&quot; or $kzm==&quot;JPG&quot;) { //文件过滤  
+  
+          if (!is_dir('./'.$file)) { //文件夹过滤  
+  
+            $array[]=$file;//把符合条件的文件名存入数组  
+  
+            $i++;//记录图片总张数  
+  
+           }  
+  
+          }  
+  
+    }  
+  
+for ($j=$max*$page;$j&lt;($max*$page+$max)&amp;&amp;$j&lt;$i;++$j){//循环条件控制显示图片张数  
+  
+    //echo &quot;&lt;img widht=800 height=600 src=\&quot;.$path&quot;\&quot;.$array[$j].&quot;&gt;&quot;;//输出图片数组  
+  
+echo &quot;&lt;a href=&quot;.$path.&quot;/&quot;.$array[$j].&quot;&gt;&lt;img width= height= src=&quot;.$path.&quot;/&quot;.$array[$j].&quot;&gt;&lt;/a&gt;&lt;br&gt;&quot;;  
+  
+}  
+  
+$Previous_page=$page-1;  
+  
+$next_page=$page+1;  
+  
+if ($Previous_page&lt;0){  
+  
+    echo &quot;上页&quot;;  
+  
+    echo &quot;&lt;a href=?page=$next_page&gt;下页&lt;/a&gt;&quot;;  
+  
+}  
+  
+    else if ($page&lt;=$i/$max){  
+  
+      echo &quot;&lt;a href=?page=$Previous_page&gt;上页&lt;/a&gt;&quot;;  
+  
+      echo &quot;&lt;a href=?page=$next_page&gt;下页&lt;/a&gt;&quot;;}  
+  
+        else{  
+  
+          echo &quot; &lt;a href=?page=$Previous_page&gt;上页&lt;/a&gt;&quot;;  
+  
+          echo &quot;下页&quot;;  
+  
+        }  
+  
+echo &quot;&lt;/center&gt;&lt;/body&gt;&lt;/html&gt;&quot;;  
+  
+?&gt;  
+</code></pre>
+<p>第30行加上这句<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>r</mi><mi>r</mi><mi>a</mi><mi>y</mi><mo>=</mo><mi>a</mi><mi>r</mi><mi>r</mi><mi>a</mi><msub><mi>y</mi><mi>r</mi></msub><mi>e</mi><mi>v</mi><mi>e</mi><mi>r</mi><mi>s</mi><mi>e</mi><mo>(</mo></mrow><annotation encoding="application/x-tex">array=array_reverse(</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mopen">(</span></span></span></span>array); //这行图片倒序</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[甲骨文搭建V2ray]]></title>
+        <id>https://uu14.github.io/post/jia-gu-wen-da-jian-v2ray/</id>
+        <link href="https://uu14.github.io/post/jia-gu-wen-da-jian-v2ray/">
+        </link>
+        <updated>2022-03-12T05:11:57.000Z</updated>
+        <content type="html"><![CDATA[<p>甲骨文官网：https://www.oracle.com/cn/cloud/free/</p>
+<p>①获取root权限：<br>
+sudo -i</p>
+<p>②</p>
+<p>V2ray一键安装指令：</p>
+<p>bash &lt;(curl -s -L https://git.io/v2ray.sh)</p>
+<p>一路全部默认即可</p>
+<p>输入代码生成Vmess URL 链接：v2ray url</p>
+<p>备注非常：重要</p>
+<p>使用Oracle Cloud free 免费云搭建了v2ray /  shadowsockR， 在 子网 -&gt; 安全列表 -&gt; 入网规则 里也打开了对应的端口，但还是无法科学上网。</p>
+<p>原来oracle cloud与 aws等云不同，需要关闭防火墙或iptable。</p>
+<p>解决方法：</p>
+<p>centos操作如下：</p>
+<p>#停止firewall<br>
+systemctl stop firewalld.service<br>
+#禁止firewall开机启动<br>
+systemctl disable firewalld.service<br>
+#关闭iptables<br>
+service iptables stop<br>
+#去掉iptables开机启动<br>
+chkconfig iptables off</p>
+<p>oracle Linux操作如下：<br>
+#停止firewall<br>
+systemctl stop firewalld.service<br>
+#禁止firewall开机启动<br>
+systemctl disable firewalld.service</p>
+<p>ubuntu操作如下：<br>
+#Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它<br>
+apt-get purge netfilter-persistent<br>
+reboot<br>
+#强制删除<br>
+rm -rf /etc/iptables &amp;&amp; reboot</p>
+]]></content>
+    </entry>
+</feed>
